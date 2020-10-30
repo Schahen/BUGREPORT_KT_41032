@@ -1,15 +1,7 @@
 import kotlin.test.Test
 
-interface GenericTests {
+class GenericTestsImpl (transform: (String) -> String) {
     @Test
-    fun foo()
-}
-
-class GenericTestsImpl : GenericTests {
-    override fun foo() {
+    fun foo() {
     }
 }
-
-interface MyTests : GenericTests
-
-class MyTestsImpl(transform: (String) -> String) : MyTests, GenericTests by GenericTestsImpl()
